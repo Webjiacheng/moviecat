@@ -1,7 +1,7 @@
 <div class="list">
     <ul>
         <li ng-repeat="item in movieList.subjects track by $index">
-            <a href="#/details">
+            <a href="#/details:{{ item.id }}">
                 <img ng-src="{{ item.images.large }}" alt="">
             </a>
             <div class="meta">
@@ -11,9 +11,9 @@
         </li>
     </ul>
     <div class="paging">
-        <label>总共：0条记录,第0/0页;</label>
+        <label>总共：{{ movieList.total }}条记录,第{{ nowPage }}/{{ totalPage }}页;</label>
         <!-- 加上disable类样式，表示按钮禁用状态 -->
-        <button class="prev disable ">上一页</button>
-        <button class="next">下一页</button>
+        <button ng-class="{prev:true,disable:nowPage==1}" ng-click="pageDown()">上一页</button>
+        <button ng-class="{next:true,disable:nowPage==totalPage}" ng-click="pageUp()">下一页</button>
     </div>
 </div>

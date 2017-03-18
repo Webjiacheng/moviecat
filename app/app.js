@@ -8,7 +8,8 @@
                 'movie.in_theaters',
                 'movie.coming_soon',
                 'movie.top250',
-                'moviecat.jsonp'
+                'moviecat.jsonp',
+                'moviecat.details'
             ])
 
 })(angular);
